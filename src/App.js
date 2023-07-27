@@ -1,16 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import {
-  ChakraProvider,
-
   Text,
-  theme,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+import Home from './components/Home';
 
 
 function App() {
   return (
-      <Text>Hi</Text>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </Router>
+
   );
 }
 
