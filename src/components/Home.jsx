@@ -25,9 +25,18 @@ const Home = () => {
                     // 1 = 4px in chakra ui
                     spacing={['16', '56']}
                 >
-                    <VStack width={'full'} alignItems={['center', 'flex-end']}>
+                    <VStack
+                        width={'full'}
+                        alignItems={['center', 'flex-end']}
+                        spacing={'6'}
+                    >
                         <Heading children='Learn From The MERN Developer' size={'2xl'} />
-                        <Text children='Find the most interactive tutorial at pocket friendly price' />
+                        <Text
+                            children='Find the most interactive tutorial at pocket friendly price'
+                            textAlign={['center', 'left']}
+                            fontSize={'2xl'}
+                            fontFamily={'cursive'}
+                        />
                         <Link to="/courses">
                             <Button
                                 size={'lg'}
