@@ -27,13 +27,7 @@ const DrawerData = [
     }
 ]
 
-const DrawerButtons = ({ url = "/", title = "Title Drawer BTN", colorS, vrnt }) => {
-    return (
-        <Link to={url}>
-            <Button variant={'ghost'} colorScheme={colorS} varient={`${vrnt}`}>{title}</Button>
-        </Link>
-    )
-}
+
 
 const Header = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -43,6 +37,14 @@ const Header = () => {
     }
     const logoutHandler = () => {
         console.log("Logged Out");
+        onClose();
+    }
+    const DrawerButtons = ({ url = "/", title = "Title Drawer BTN", colorS, vrnt }) => {
+        return (
+            <Link to={url} onClick={onClose}>
+                <Button variant={'ghost'} colorScheme={colorS} varient={`${vrnt}`}>{title}</Button>
+            </Link>
+        )
     }
     return (
         <>
@@ -87,7 +89,7 @@ const Header = () => {
                                         <VStack>
                                             <HStack>
                                                 <DrawerButtons url='/profile' title='Profile' vrnt='ghost' />
-                                                <Link>
+                                                <Link onClick={onClose}>
                                                     <Button variant={'ghost'} onClick={logoutHandler}>
                                                         <RiLogoutBoxLine />
                                                         Logout
@@ -97,7 +99,11 @@ const Header = () => {
                                             {
                                                 user && user.role === 'admin' && (
                                                     <Link to="/admin/dashboard">
-                                                        <Button colorScheme={'purple'} varient={"ghost"}>
+                                                        <Button
+                                                            colorScheme={'purple'}
+                                                            varient={"ghost"}
+                                                            onClick={onClose}
+                                                        >
                                                             <RiDashboardFill style={{ margin: '4px' }} />
                                                             Admin Dashboard
                                                         </Button>

@@ -4,8 +4,11 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+
+// Components Import
 import Home from './components/Home';
 import Header from './components/Layout/Header/Header';
+import Courses from './components/Courses/Courses';
 
 
 function App() {
@@ -14,6 +17,8 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/courses' element={<Courses />} />
+
       </Routes>
     </Router>
 
