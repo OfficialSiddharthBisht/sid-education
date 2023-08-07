@@ -9,6 +9,7 @@ import { ColorModeSwitcher } from './ColorModeSwitcher';
 import Home from './components/Home';
 import Header from './components/Layout/Header/Header';
 import Courses from './components/Courses/Courses';
+import Footer from './components/Layout/Footer/Footer';
 
 
 function App() {
@@ -18,8 +19,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/courses' element={<Courses />} />
-
       </Routes>
+      <Footer />
     </Router>
 
   );
