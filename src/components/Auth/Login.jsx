@@ -1,5 +1,6 @@
-import { Box, Button, Container, FormLabel, Heading, Input, Link, VStack } from '@chakra-ui/react'
+import { Box, Button, Container, FormLabel, Heading, Input, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 const Login = () => {
@@ -8,7 +9,7 @@ const Login = () => {
     return (
         <Container h={'95vh'}>
             <VStack h={'full'} justifyContent={'center'} spacing={'16'}>
-                <Heading children="Welcome to Sid Ed." />
+                <Heading children="Login Here" textTransform={'uppercase'} />
                 <form style={{ width: "100%" }}>
                     <Box marginY={'4'}>
                         <FormLabel htmlFor='email' children="Email" />
@@ -36,7 +37,7 @@ const Login = () => {
                         />
                     </Box>
                     <Box>
-                        <Link to="/forgotPassword">
+                        <Link to="/forgetPassword">
                             <Button fontSize={'sm'} variant='link'>
                                 Forgot Password
                             </Button>
@@ -47,7 +48,7 @@ const Login = () => {
                     </Button>
                     <Box marginY='4'>
                         New User? {' '}
-                        <Link to='/register'>
+                        <Link to='register'>
                             <Button colorScheme={'yellow'} variant={'link'}>
                                 Sign Up
                             </Button>
