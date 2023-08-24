@@ -16,6 +16,7 @@ import ForgetPassword from './components/Auth/ForgetPassword';
 import ResetPassword from './components/Auth/ResetPassword';
 import Contact from './components/Contact/Contact';
 import Request from './components/Request/Request';
+import About from './components/About/About';
 
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
         <Route path='/resetpassword/:token' element={<ResetPassword />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/request' element={<Request />} />
+        <Route path='/about' element={<About />} />
+
 
 
 
