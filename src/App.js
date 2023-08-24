@@ -21,16 +21,23 @@ import PaymentFail from './components/Payments/PaymentFail';
 import PaymentSuccess from './components/Payments/PaymentSuccess';
 import Subscribe from './components/Payments/Subscribe';
 import NotFound from './components/Layout/NotFound/NotFound';
+import CoursePage from './components/CoursePage/CoursePage';
 
 
 
 function App() {
+  // to stop our web app from right click
+  window.addEventListener('contextmenu', e => {
+    e.preventDefault();
+  });
+
   return (
     <Router>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/courses' element={<Courses />} />
+        <Route path='/courses/:id' element={<CoursePage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/forgetpassword' element={<ForgetPassword />} />
